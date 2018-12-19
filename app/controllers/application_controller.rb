@@ -20,7 +20,7 @@ class App < Sinatra::Base
       @hero_power << attrib[:power]
       @hero_bio << attrib[:bio]
     end
-    
+
     erb :team
   end
 end
