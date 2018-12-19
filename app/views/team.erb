@@ -1,11 +1,11 @@
-<h1><%= @team_name %></h1>
-<h2>Team Motto: <%= @team_motto %></h2>
+# views/team.erb
+<h1>Team Name: <%= @team[:name] %></h1>
 
-<% @team_members.each.with_index do |hero, index| %>
-  <h2>Hero Name: <%= @hero_name[index] %></h2>
-  <p>
-    Hero power: <%= @hero_power[index] %>
-    <br>
-    Hero biography: <%= @hero_bio[index] %>
-  </p>
+<h3>Team Motto: <%= @team[:motto] %></h3>
+
+<h3>Team Members</h3>
+<% @team[:members].each do |member, member_attributes| %>
+  <h5><%= member_attributes[:name] %></h5>
+  <p><strong>Power</strong>: <%= member_attributes[:power] %></p>
+  <p><strong>Bio</strong>: <%= member_attributes[:bio] %></p>
 <% end %>
